@@ -9,18 +9,25 @@ class Node{
         this->next = NULL;
     }
 };
+void printNodes(Node*head){
+Node* temp = head;
+while(temp!=NULL){
+    cout<<temp->data<<"";
+    temp = temp->next; 
+}
+cout<<endl;
+}
+
 int main(){
-    Node n1(10);
-    Node n2(20);
-    Node n3(30);
-    Node n4(40);
-    Node n5(50);
-    n1.next = &n2;
-    n2.next = &n3;
-    n3.next = &n4;
-    n4.next = &n5;
-
-    cout<<n1.data<<" "<<n2.data<<" "<<n3.data<<" "<<n4.data<<" "<<n5.data<<endl;
-     return 0;  
-
+    Node *head = new Node(1);
+    Node *second = new Node(2);
+    Node *third = new Node(3);
+    Node *fourth = new Node(4);
+    Node *fifth = new Node(5);
+    head->next = second;
+    second->next = third;
+    third->next = fourth;
+    fourth->next = fifth;
+    printNodes(head);
+     return 0;
 }
